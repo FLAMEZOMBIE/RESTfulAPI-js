@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var TaskSchema = new Schema({
     name: {
         type: String,
-        required: 'Restful API Node JS And Mongoodb'
+        required: true
     },
     Create_Date: {
         type: Date,
@@ -15,8 +15,8 @@ var TaskSchema = new Schema({
             type: String,
             enum: ['pending', 'ongoing', 'completed']
         }],
-        default: ['pending']
+        default: ['completed']
     }
 });
 
-module.exports = mongoose.model('Task, TaskSchema');
+module.exports = mongoose.model('Task', TaskSchema);
